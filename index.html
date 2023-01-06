@@ -1,377 +1,431 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text scramble effect</title>
     <style>
-      body {
-        background-color: rgb(251, 217, 217);
-        font-family: monospace;
-        font-size: 60px;
-      }
-      .overlay {
-        position: fixed;
-        display: none;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.85);
-        z-index: 1;
-      }
-      .overlay-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: left;
-      }
-      .overlay-content h1 {
-        font-size: 30px;
-        margin: 0;
-      }
-      .overlay-close {
-        position: absolute;
-        top: 20px;
-        right: 133px;
-        font-size: 444px;
-        color: rgb(0, 0, 0);
-        cursor: pointer;
-      }
-      .overlay-close:hover {
-        color: lightgrey;
-      }
-      .overlay-link {
-        font-size: 60px;
-        color: black;
-        cursor: pointer;
-        text-decoration: none;
-      }
-      .overlay-link:hover {
-        color: rgb(255, 0, 166);
-      }
-      #top-line {
-        margin-top: 0px;
-        height: 44px;
-        width: 100%;
-        background: linear-gradient(to right, rgba(255, 255, 255, 0.66), rgb(251, 217, 217));
+    
+     @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+html,
+body {
+  font-family: monospace;
+  background: rgb(251, 217, 217);
+  height: 100%;
+
+}
+.container {
+background:none;
+margin-left: 0px;
+margin-bottom:0px;
+}
+.text {
+  font-weight: 100;
+  font-size: 24px;
+  color: rgb(96, 96, 96);
+}
+.dud {
+  color: rgb(96, 96, 96);
+}
+.logo {
+  font-size: 28px;
+font-weight: 100;
+color: rgb(251, 217, 217);
+font-style: bold;
+background-color:rgb(251, 217, 217);
+padding-left: 10px;
+margin-top:0;
+}
+.logo span {
+  font-size: 44px;
+}
+.logo:hover{
+  color: white;
+  background: rgb(251, 217, 217);
+}
+.dropoone {
+  background: rgb(251, 217, 217);
+  font-size: 24px;
+  font-weight: 100;
+  color: rgb(251, 217, 217);
+  padding-left: 11px;
+}
+.dropoone:hover {
+  color: rgb(96, 96, 96);
+  background: rgb(251, 217, 217);
+}
+#logobutton{
+  font-family: monospace;
+  font-size: 24px;
+  background:rgba(255, 222, 222, 0.69);
+  color: rgb(96, 96, 96);
+  font-weight: 100;
+  margin-top: 40px;
+  margin-bottom: 24px;
+  padding-right: 211.5px;
+  padding-top: 5px;
+  padding-bottom:5px;
+}
+#logobutton:hover{
+  background-color:rgba(255, 255, 255, 0.49);
+  color: rgb(96, 96, 96);
+}
+.quotetatochips{
+  font-family: monospace;
+  background:rgba(255, 222, 222, 0.69);
+  color: rgb(96, 96, 96);
+font-size: 24px;
+  font-weight: 100;
+  padding:13px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding-right: 106.5px;
+}
+#quotetatochips:hover {
+  background: rgba(255, 255, 255, 0.49);
+  color: rgb(96, 96, 96);
+}
+.drop01button{
+  font-family: monospace;
+  background:rgba(255, 222, 222, 0.69);
+  color: rgb(96, 96, 96);
+font-size: 24px;
+  font-weight: 100;
+  padding:13px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding-right: 199.5px;
+}
+#drop01button:hover {
+  background: rgba(255, 255, 255, 0.49);
+  color: rgb(96, 96, 96);
+}
+.dropoone {
+  background:none;
+}
+.drop02button {
+  font-family: monospace;
+  background:rgba(255, 222, 222, 0.69);
+  color: rgb(96, 96, 96);
+  font-weight: 100;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-left:11.5px;
+  padding: 13px;
+  padding-left:14px;
+}
+#drop02button:hover {
+  background: rgba(255, 255, 255, 0.49);
+}
+.nextdropbutton {
+  font-family: monospace;
+  background:rgba(122, 122, 122, 0.03);
+  color: rgba(96, 96, 96, 0.22);
+  font-weight: 100;
+  font-size:24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 13px;
+  padding-left: 17px;
+  padding-right:9px;
+}
+.nextdrop:hover{
+  background: rgba(255, 255, 255, 0.49);
 }
 
-      #topline {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        font-size: 33px;
-        color:rgba(0, 0, 0, 0.22);
-      }
-      #topline span {
-        font-size:44px;
-      }
-      #secondline {
-        margin-top: 0px;
-        font-size: 14.4px;
-        color:rgba(0, 0, 0, 0.22);
-        margin-bottom: 0px;
-      }
-      #toplinetwo {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        font-size: 23.3px;
-        color:rgba(255, 255, 255, 0.99);
-      }
-      #secondlinetwo {
-        margin-top: 0px;
-        font-size: 16px;
-        color:rgba(255, 255, 255, 0.99);
-        margin-bottom: 44px;
-      }
-      #quote-tato-chips {
-        font-size: 125px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        color:rgba(0, 0, 0, 0.66);
-      }
-      #oone {
-        font-size: 125px;
-        margin-top: 0px;
-        color:rgba(0, 0, 0, 0.66);
-        margin-bottom: 44px;
-      }
-      #oone:hover {
-        color:black;
-        cursor: pointer;
-      }
-      #otwo {
-        font-size: 125px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        color:rgba(255, 255, 255, 0.66)
-      }
-      #dropotwo {
-        font-size: 125px;
-        margin-top: 0px;
-        color:rgba(255, 255, 255, 0.66);
-        margin-bottom: 33px;
-      }
-      #dropotwo:hover span{
-        display: none;
-      }
-      #dropotwo:hover:before {
-        content: "XXXXXXXXX XXX XXXX";
-        color: white;
-      }
-      #othree {
-        font-size: 225px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        color: rgba(255, 255, 255, 0.66);
-      }
-      #ofour {
-        font-size: 225px;
-        margin-top: 0px;
-        color: rgba(255, 255, 255, 0.66);
-        margin-bottom: 44px;
-      }
-      #ofive {
-        font-size: 225px;
-        margin-top: 0px;
-        color: rgba(255, 255, 255, 0.66);
-        margin-bottom: 44px;
-      }
-      #osix {
-        font-size: 225px;
-        margin-top: 0px;
-        color: rgba(255, 255, 255, 0.66);
-        margin-bottom: 44px;
-      }
-      #oseven {
-        font-size: 225px;
-        margin-top: 0px;
-        color: rgba(255, 255, 255, 0.66);
-        margin-bottom: 44px;
-      }
-      #oeight {
-        font-size: 225px;
-        margin-top: 0px;
-        color: rgba(255, 255, 255, 0.66);
-        margin-bottom: 44px;
-      }
-      #onine {
-        font-size: 225px;
-        margin-top: 0px;
-        color: rgba(255, 255, 255, 0.66);
-        margin-bottom: 44px;
-      }
-      #info-button {
-  background-color: white;
-  border: none;
-  border-radius: 20px;
-  font-weight: bold;
-  font-size: 90px;
-  color: black;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
-  height: 100px;
-  margin-top: 66px;
-  margin-right: 39px;
-}
-#info-button:hover {
-  background-color: black;
-}
-#info-button span {
-  display: block;
-  transform: rotate(34deg);
-  font-family: Arial, Helvetica, sans-serif;
-  color:rgb(255, 0, 247)
-}
-     #info-window {
-  display: none;
+#fullscreen-window {
+  display:none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  font-size: 66px;
-  text-align: center;
+  background: rgb(251, 217, 217);
+  z-index: 9999;
 }
 
-      #info-window p {
+#window-content {
+  font-size:26px;
+  font-family: monospace;
+  margin-top: 44%;
+  padding-left: 6%;
+  padding-right: 6%;
+  margin-right: 20%;
+  margin-left: 20%;
+  text-align:center;
+  color:rgba(96, 96, 96);
+}
+#link {
+  text-decoration:none;
+}
+#window-content:hover {
+  color:white;
+}
+#window-title {
+  background:none;
+  font-size: 24px;
+  color:rgba(96, 96, 96);
+  text-align:center;
+}
+
+#close-fullscreen-window {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: right;
+  top: 20px;
+  right: 20px;
+  margin-top: 5%;
+  margin-right: 5%;
+  padding-right:10px;
+  padding-left: 10px;
+  background:none;
+  color:rgba(96, 96, 96);
+  font-size: 39px;
+  cursor: pointer;
+}
+#close-fullscreen-window:hover {
+background: rgba(255, 255, 255, 0.49);
 }
 
-      @media only screen and (max-width: 1024px) {
-        .overlay-content h1 {
-          font-size: 44px;
-        }
-        .overlay-close {
-          font-size: 160px;
-          position: absolute;
-        top: 60px;
-        right: 20px;
-        }
-        .overlay-link {
-          font-size: 44px;
-        }
-        #topline {
-        margin-top: 10px;
-        margin-bottom: 0px;
-        font-size: 22px;
-        color:rgba(0, 0, 0, 0.22);
-        font-family: Arial, Helvetica, sans-serif;
 
-      }
-      #topline span {
-        font-size:28px;
-      }
-      #secondline {
-        margin-top: 0px;
-        font-size: 13.3px;
-        margin-bottom: 0px;
-        color:rgba(0, 0, 0, 0.26);
-      }
-      #toplinetwo {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        font-size: 14.8px;
-        color: white;
 
-      }
-      #secondlinetwo {
-        margin-top: 0px;
-        font-size: 10px;
-        margin-bottom: 33px;
-        color:white;
-      }
-        #quote-tato-chips {
-          font-size: 56px;
-          color: black;
-        }
-        #oone {
-          font-size: 56px;
-          margin-bottom: 22px;
-          color: black;
-        }
-        #otwo {
-        font-size: 56px;
-        color: white;
-      }
-      #dropotwo {
-        font-size: 56px;
-        color: white;
-      }
-      #othree {
-        font-size: 99px;
-        margin-bottom: 22px;
-        color: white;
-      }
-      #ofour {
-        font-size: 99px;
-        margin-bottom: 22px;
-        color: white;
-      }
-      #ofive {
-        font-size: 99px;
-        margin-bottom: 22px;
-        color: white;
-      }
-      #osix {
-        font-size: 99px;
-        margin-bottom: 22px;
-        color: white;
-      }
-      #oseven {
-        font-size: 99px;
-        margin-bottom: 22px;
-        color: white;
-      }
-      #oeight {
-        font-size: 99px;
-        margin-bottom: 22px;
-        color: white;
-      }
-      #onine {
-        font-size: 99px;
-        margin-bottom: 22px;
-        color: white;
-      }
-   
-      #info-button {
-        background-color: white;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
+
+
+
+
+
+
+
+@media only screen and (min-width: 780px) {
+  .container {
+    margin-right:10px;
+  }
+  .text {
+  font-size: 29px;
+}
+.logo {
+  font-size: 29px;
+  margin-top:4%;
+  padding-right:10px;
+}
+.logo span {
+  font-size: 51px;
+}
+#logobutton{
+  font-size: 27px;
+  padding-right: 264px;
+  margin-top: 10px;
+}
+.dropoone {
+  font-size: 29px;
+}
+.quotetatochips {
+  font-size: 29px;
+  padding-right: 126px;
+}
+.drop01button {
+  font-size: 29px;
+  padding-right: 237px;
+}
+.nextdropbutton {
+  font-size: 29px;
+  padding-right:11px;
+  padding-left:15px;
+}
+
+#window-content {
+  margin-top: 26%;
+  margin-right: 29%;
+  margin-left: 29%;
+}
+
+#close-fullscreen-window {
+  padding: 10px;
+  padding-right:19px;
+  padding-left: 19px;
+  background:none;
+  color:rgba(96, 96, 96);
   font-size: 44px;
-  color: black;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 36px;
-  height: 44px;
-  margin-top: 60px;
-  margin-right: 10px;
+  cursor: pointer;
 }
-#info-window {
-  font-size: 44px;
+
 }
-      
-      }
-</style>
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1280px) {
+
+.container {
+  margin-left:16px;
+}
+.text {
+font-size: 39px;
+}
+
+.logo {
+  font-size: 39px;
+  margin-top:13%;
+margin-left:33%;
+margin-bottom:3%;
+}
+.logo span {
+font-size: 69px;
+}
+#logobutton{
+  font-size: 39px;
+  padding-right: 297px;
+  padding-left:33px;
+  padding-top:33px;
+  padding-bottom:33px;
+}
+
+.dropoone {
+  font-size: 39px;
+  margin-bottom: 10px;
+}
+.quotetatochips {
+  font-size: 39px;
+  margin-left:33%;
+  padding-right: 163px;
+}
+.drop01button {
+  font-size: 39px;
+  margin-left:33%;
+  padding-right: 314px;
+}
+.drop02button {
+  font-size:39px;
+  margin-left:33%;
+}
+
+.nextdropbutton {
+font-size: 39px;
+margin-left:33%;
+}
+
+#window-content {
+  font-size: 34px;
+}
+}
+
+    </style>
 </head>
 <body>
-  <div class="overlay" id="overlay">
-    <div class="overlay-content">
-      <a href="www.quote-tatochips.com" class="overlay-link">An insurance quote through farmers, but it's potato chips.</a>
-    </div>
-    <span class="overlay-close" id="overlay-close">&times;</span>
-  </div>
-  <div id="top-line">
-  </div>  
-  <p id="topline">TRUST<span id="topline">X</span>ONE,</p>
-  <p id="secondline">death 2tha bourgeoisie!</p>
-  <p id="toplinetwo">PERCEPTION</p>
-  <p id="secondlinetwo">designed by ai.</p>
-  <span id="quote-tato-chips"><p id="quote-tato-chips">01.</p>
-  <p id="oone">QUOTE-TATO CHIPS</p></span>
-  <p id="otwo">02.</p>
-  <p id="dropotwo"><span>FEB.16.23</span></p>
-  <p id="othree">03.XXXXXXXXX</p>
-  <p id="ofour">##. XXX XXXX</p>
-  <p id="ofive">##. XXX XXXX</p>
-  <p id="osix">##. XXX XXXX</p>
-  <p id="oseven">##. XXX XXXX</p>
-  <p id="oeight">##. XXX XXXX</p>
-  <p id="onine">##. XXX XXXX</p>
-  <button id="info-button"><span>i</span></button>
-  <div id="info-window">
-    <p>Press: illuminati@TRUSTXONE.XYZ Marketing: perception@TRUSTXONE.XYZ</p>
-  </div>
-</body>
+
+  <div class="logo">
+    <button id="logobutton">TRUST<span>X</span>ONE.XYZ</button>
+  
+  </div></div>
+  
+  <div class="dropoone"><button id='quotetatochips' class="quotetatochips">01. QUOTE-TATO-CHIPS.</button></div>
+  <div class="dropoone"><button id='drop01button' class="drop01button">02. FREE GIF.T</button></div>
+  
+ 
+  <div class="container">
+    <button id="drop02button" class="drop02button"><div class="text"></div></button>
+  </div> 
+
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+  <div class="dropoone"><button id='nextdropbutton' class="nextdropbutton">##. X0X0X0X0X0X0X0X0X0X0X0X0</button></div>
+
+<div>
+
+</div>
+
+<script src="scramble.js"></script>
 <script>
-  const quoteText = document.getElementById("quote-tato-chips");
-  const overlay = document.getElementById("overlay");
-  const overlayClose = document.getElementById("overlay-close");
+    
+    
+const phrases = ['##. X0X0X0X0X0X0X0X0X0X0X0X0','03. NEXT DROP:FEBRUARY.17.23'];
+const el = document.querySelector('.text');
+const fx = new TextScramble(el);
+let counter = 0;
 
-  quoteText.addEventListener("click", function() {
-    overlay.style.display = "block";
+const next = () => {
+  fx.setText(phrases[counter]).then(() => {
+    setTimeout(next, 1500);
   });
-  overlayClose.addEventListener("click", function() {
-    overlay.style.display = "none";
-  });
-  const infoButton = document.getElementById('info-button');
-const infoWindow = document.getElementById('info-window');
+  counter = (counter + 1) % phrases.length;
+};
 
-infoButton.addEventListener('click', function() {
-  infoWindow.style.display = 'block';
+next();
+    </script>
+
+      
+    <div id="fullscreen-window">
+      <button id="close-fullscreen-window">X</button>
+      <h1 id="window-title"></h1> 
+      <a id="link" href="#"><div id="window-content"></div></a>
+    </div>
+    
+    <script>
+const fullscreenWindow = document.querySelector('#fullscreen-window');
+const closeButton = document.querySelector('#close-fullscreen-window');
+const windowContent = document.querySelector('#window-content');
+
+document.querySelector('#logobutton').addEventListener('click', () => {
+  windowContent.textContent = 'PRESS@TRUSTXONE.XYZ for press | LFG@TRUSTXONE.XYZ for marketing.';
+  fullscreenWindow.style.display = 'block';
+  link.href = 'https://www.example1.com';
+});
+closeButton.addEventListener('click', () => {
+  fullscreenWindow.style.display = 'none';
 });
 
-infoWindow.addEventListener('click', function() {
-  infoWindow.style.display = 'none';
+document.querySelector('#quotetatochips').addEventListener('click', () => {
+  windowContent.textContent = 'An insurance quote through farmers, but its potato chips.';
+  fullscreenWindow.style.display = 'block';
+});
+closeButton.addEventListener('click', () => {
+  fullscreenWindow.style.display = 'none';
 });
 
-</script>
+document.querySelector('#drop01button').addEventListener('click', () => {
+  windowContent.textContent = 'Share the fb post for a free gif.t';
+  fullscreenWindow.style.display = 'block';
+});
+closeButton.addEventListener('click', () => {
+  fullscreenWindow.style.display = 'none';
+});
+
+document.querySelector('#drop02button').addEventListener('click', () => {
+  windowContent.textContent = 'Livestream reveal 02.17.23.';
+  fullscreenWindow.style.display = 'block';
+});
+closeButton.addEventListener('click', () => {
+  fullscreenWindow.style.display = 'none';
+});
+
+
+
+    </script>
+</body>
 </html>
