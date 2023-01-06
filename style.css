@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(251, 217, 217);
+}
+.content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .text{
+  position: relative;
+  color: rgb(96, 96, 96);
+  font-weight: 100;
+  font-size: 45px;
+  padding: 30px;
+  padding-top: 0px;
+  letter-spacing: 2px;
+}
+.content .text span {
+  font-size: 99px;
+}
+.content .text:before,
+.content .text:after {
+  padding: 30px;
+  color: rgba(0, 0, 0, 0.19);
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:rgb(251, 217, 217);
+  overflow: hidden;
+  top: 0;
+}
+.content .text:before{
+  left: 3px;
+  animation: glitch-1 2s linear infinite reverse;
+}
+.content .text:after{
+  left: -3px;
+  animation: glitch-2 2s linear infinite reverse;
+}
+
+@keyframes glitch-1 {
+  0% {
+    clip: rect(132px, auto, 101px, 30px);
+  }
+  5% {
+    clip: rect(17px, auto, 94px, 30px);
+  }
+  10% {
+    clip: rect(40px, auto, 66px, 30px);
+  }
+  15% {
+    clip: rect(87px, auto, 82px, 30px);
+  }
+  20% {
+    clip: rect(137px, auto, 61px, 30px);
+  }
+  25% {
+    clip: rect(34px, auto, 14px, 30px);
+  }
+  30% {
+    clip: rect(133px, auto, 74px, 30px);
+  }
+  35% {
+    clip: rect(76px, auto, 107px, 30px);
+  }
+  40% {
+    clip: rect(59px, auto, 130px, 30px);
+  }
+  45% {
+    clip: rect(29px, auto, 84px, 30px);
+  }
+  50% {
+    clip: rect(22px, auto, 67px, 30px);
+  }
+  55% {
+    clip: rect(67px, auto, 62px, 30px);
+  }
+  60% {
+    clip: rect(10px, auto, 105px, 30px);
+  }
+  65% {
+    clip: rect(78px, auto, 115px, 30px);
+  }
+  70% {
+    clip: rect(105px, auto, 13px, 30px);
+  }
+  75% {
+    clip: rect(15px, auto, 75px, 30px);
+  }
+  80% {
+    clip: rect(66px, auto, 39px, 30px);
+  }
+  85% {
+    clip: rect(133px, auto, 73px, 30px);
+  }
+  90% {
+    clip: rect(36px, auto, 128px, 30px);
+  }
+  95% {
+    clip: rect(68px, auto, 103px, 30px);
+  }
+  100% {
+    clip: rect(14px, auto, 100px, 30px);
+  }
+}
+@keyframes glitch-2 {
+  0% {
+    clip: rect(129px, auto, 36px, 30px);
+  }
+  5% {
+    clip: rect(36px, auto, 4px, 30px);
+  }
+  10% {
+    clip: rect(85px, auto, 66px, 30px);
+  }
+  15% {
+    clip: rect(91px, auto, 91px, 30px);
+  }
+  20% {
+    clip: rect(148px, auto, 138px, 30px);
+  }
+  25% {
+    clip: rect(38px, auto, 122px, 30px);
+  }
+  30% {
+    clip: rect(69px, auto, 54px, 30px);
+  }
+  35% {
+    clip: rect(98px, auto, 71px, 30px);
+  }
+  40% {
+    clip: rect(146px, auto, 34px, 30px);
+  }
+  45% {
+    clip: rect(134px, auto, 43px, 30px);
+  }
+  50% {
+    clip: rect(102px, auto, 80px, 30px);
+  }
+  55% {
+    clip: rect(119px, auto, 44px, 30px);
+  }
+  60% {
+    clip: rect(106px, auto, 99px, 30px);
+  }
+  65% {
+    clip: rect(141px, auto, 74px, 30px);
+  }
+  70% {
+    clip: rect(20px, auto, 78px, 30px);
+  }
+  75% {
+    clip: rect(133px, auto, 79px, 30px);
+  }
+  80% {
+    clip: rect(78px, auto, 52px, 30px);
+  }
+  85% {
+    clip: rect(35px, auto, 39px, 30px);
+  }
+  90% {
+    clip: rect(67px, auto, 70px, 30px);
+  }
+  95% {
+    clip: rect(71px, auto, 103px, 30px);
+  }
+  100% {
+    clip: rect(83px, auto, 40px, 30px);
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Poppins:wght@100;500;600;800;900&family=Lobster+Two:ital,wght@0,400;0,700;1,400&display=swap");
+/* GLOBAL CONFIG RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+select:focus, input:focus, button:focus {
+  outline: none;
+}
+
+/* -------- BODY DISPLAY --------- */
+body {
+  background-color: rgb(251, 217, 217);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* -------- TYPE SELECTORS --------- */
+/* -------- CLASS --------- */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .box {
+  transform-style: preserve-3d;
+  animation: animate 7s ease-in-out infinite alternate;
+}
+.container .box span {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.024), rgba(0, 0, 0, 0.24) 90%, transparent);
+  text-transform: uppercase;
+  line-height: 0.76em;
+  position: absolute;
+  color: #fff;
+  font-size: 2.0em;
+  white-space: nowrap;
+  font-weight: bold;
+  padding: 0px 10px;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(64px);
+}
+.container .box span i {
+  font-style: initial;
+}
+.container .box span i:nth-child(1) {
+  color: rgb(255, 255, 255);
+}
+.container .box span i:nth-child(2) {
+  color: rgb(251, 217, 217);
+}
+
+@keyframes animate {
+  0% {
+    transform: perspective(500px) rotateX(0deg) rotate(5deg);
+  }
+  100% {
+    transform: perspective(50px) rotateX(360deg) rotate(5deg);
+  }
+}
+/* -------- PSEUDO CLASS --------- */
+/* -------- MEDIA QUERY --------- */
+#pillcontainer {
+  padding-top: 130px;
+}
+#pillbutton{
+  background:rgb(255, 222, 222);
+  color: rgb(96, 96, 96);
+  padding: 6px;
+  font-size:16px;
+  border-radius: 10%;
+  cursor: pointer;
+}
+#pillbutton:hover{
+  box-shadow: -5px -5px 15px rgba(255, 227, 227, 0.6), 5px 5px 15px rgba(230, 203, 203, 0.6), inset 5px 5px 10px rgba(230, 203, 203, 0.6), inset -5px -5px 10px rgbrgba(255, 227, 227, 0.6);
+  transition: 500ms;
+  color: white;
+  text-shadow:white;
+}
+#enterbuttoncontainer{
+  background: none;
+  padding-left: 35%;
+  margin-left: 3%;
+  margin-right: 3%;
+
+}
+#enterbutton {
+  background:rgb(255, 222, 222);
+  color: rgb(96, 96, 96);
+  position: center;
+  padding: 3%;
+  background: none;
+  font-size:16px;
+  border-radius: 10%;
+}
+#enterbutton:hover {
+  box-shadow: -5px -5px 15px rgba(255, 227, 227, 0.6), 5px 5px 15px rgba(230, 203, 203, 0.6), inset 5px 5px 10px rgba(230, 203, 203, 0.6), inset -5px -5px 10px rgbrgba(255, 227, 227, 0.6);
+  transition: 500ms;
+  color: white;
+  text-shadow:white;
+}
+
+
+/* Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
