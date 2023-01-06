@@ -251,14 +251,18 @@ body {
   padding-top: 130px;
 }
 #pillbutton{
-  background: white;
+  background:rgb(255, 222, 222);
+  color: rgb(96, 96, 96);
   padding: 6px;
+  font-size:16px;
   border-radius: 10%;
   cursor: pointer;
 }
 #pillbutton:hover{
-  background: none;
-  cursor: pointer;
+  box-shadow: -5px -5px 15px rgba(255, 227, 227, 0.6), 5px 5px 15px rgba(230, 203, 203, 0.6), inset 5px 5px 10px rgba(230, 203, 203, 0.6), inset -5px -5px 10px rgbrgba(255, 227, 227, 0.6);
+  transition: 500ms;
+  color: white;
+  text-shadow:white;
 }
 #enterbuttoncontainer{
   background: none;
@@ -268,13 +272,19 @@ body {
 
 }
 #enterbutton {
+  background:rgb(255, 222, 222);
+  color: rgb(96, 96, 96);
   position: center;
   padding: 3%;
   background: none;
+  font-size:16px;
+  border-radius: 10%;
 }
 #enterbutton:hover {
-  background: rgb(255, 255, 255);
-  cursor: pointer;
+  box-shadow: -5px -5px 15px rgba(255, 227, 227, 0.6), 5px 5px 15px rgba(230, 203, 203, 0.6), inset 5px 5px 10px rgba(230, 203, 203, 0.6), inset -5px -5px 10px rgbrgba(255, 227, 227, 0.6);
+  transition: 500ms;
+  color: white;
+  text-shadow:white;
 }
 
 
