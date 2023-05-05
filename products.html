@@ -364,8 +364,7 @@ button:focus {
   </div></div>
   <div class="dropoone"><button id='quotetatochips' class="quotetatochips">01. QUOTE-TATO-CHIPS.</button></div>
   <div></div>
-  <div class="dropoone"><button id='drop01button' class="drop01button">02. REVERSE B-DAY.</button></div>
-  
+ 
  
   <div class="container">
     <button id="drop02button" class="drop02button"><div class="text"></div></button>
@@ -407,7 +406,7 @@ button:focus {
 <script>
     
     
-const phrases = ['##. X0X0X0X0X0X0X0X0X0X0X0X0','03. NEXT DROP: X MARCH.17.23'];
+const phrases = ['##. X0X0X0X0X0X0X0X0X0X0X0X0','02. NEXT DROP=>  JUNE.01.2023'];
 const el = document.querySelector('.text');
 const fx = new TextScramble(el);
 let counter = 0;
@@ -444,27 +443,19 @@ closeButton.addEventListener('click', () => {
 });
 
 document.querySelector('#quotetatochips').addEventListener('click', () => {
-  windowContent.textContent = 'An insurance quote through farmers, but its potato chips.';
+  windowContent.textContent = 'An insurance quote through farmers, but it\'s potato chips. Click to purchase Drop 01.';
   fullscreenWindow.style.display = 'block';
-  link.href = 'http://quote-tatochips.xyz';
+  link.href = 'quotetatochips.html';
 });
 closeButton.addEventListener('click', () => {
   fullscreenWindow.style.display = 'none';
 });
 
-document.querySelector('#drop01button').addEventListener('click', () => {
-  windowContent.textContent = 'Its my bd so im buying. Share the post for a gif.t';
-  fullscreenWindow.style.display = 'block';
-  link.href = 'https://www.facebook.com/trustxonexyz';
-});
-closeButton.addEventListener('click', () => {
-  fullscreenWindow.style.display = 'none';
-});
 
 document.querySelector('#drop02button').addEventListener('click', () => {
-  windowContent.textContent = 'Drop 03 live 02.17.23. follow to qualify.';
+  windowContent.textContent = 'Drop 02 live on Youtube 06.01.23 8PM CST. Click for reveal.';
   fullscreenWindow.style.display = 'block';
-  link.href = 'https://www.twitch.tv/trustxonexyz';
+  link.href = 'https://www.youtube.com/@trustxone';
 });
 closeButton.addEventListener('click', () => {
   fullscreenWindow.style.display = 'none';
