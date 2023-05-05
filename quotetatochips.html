@@ -34,12 +34,35 @@ height: auto;
 max-width: 30%;
 
 }
+      
+button {
+        cursor: pointer;
+        background: rgb(251, 217, 217);
+        border: none;
+        border-radius: 10px;
+        box-shadow: -5px -5px 15px rgba(255, 227, 227, 0.6), 5px 5px 15px rgba(230, 203, 203, 0.6), inset 5px 5px 10px rgba(255, 227, 237, 0.6), inset -5px -5px 10px rgba(230, 203, 203, 0.6);
+        color: rgb(230, 203, 203);
+      }
+      
+      
+      button:hover {
+        box-shadow: -5px -5px 15px rgba(255, 227, 227, 0.6), 5px 5px 15px rgba(230, 203, 203, 0.6), inset 5px 5px 10px rgba(230, 203, 203, 0.6), inset -5px -5px 10px rgbrgba(255, 227, 227, 0.6);
+        transition: 500ms;
+        color: white;
+        text-shadow:white;
+      }
+      
+      button:focus {
+        outline: none;
+      }
+      
 #enterbuttoncontainer{
   background: none;
 position: relative;
 
 }
 #enterbuttondiv {
+  background: none;
   display: flex;
   justify-content: center;
   align-items: center;
